@@ -8,8 +8,9 @@ public class Main {
 		
 		System.out.println("3. feladat: "+ tr.getUtazasokSzama());
 		tr.bevetelPluszFuvar();
-		tr.fizetesiModok();
-
+		System.out.println("5. Felada:"); tr.fizetesiModok();		
+		System.out.println("6. Felada: "+Math.round(tr.megtettKilometer() * 100.0) / 100.0);
+		tr.leghosszabb();
 	}
 
 }

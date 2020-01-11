@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Dictionary;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -80,15 +82,12 @@ public class TaxisokRepository {
 
 	public void fizetesiModok() {
 		
-		HashSet<String> modok = new HashSet<String>();	
 		TreeMap<String, Integer> tree_map = new TreeMap<String, Integer>(); 
 		
-		for (Taxi taxi : Taxisok) {			
-			modok.add(taxi.getFizetesiMod());
+		for (Taxi taxi : Taxisok) {
 			tree_map.merge(taxi.getFizetesiMod(), 1, Integer::sum);
 		}
-		
-		
+				
 		for(Map.Entry<String,Integer> entry : tree_map.entrySet()) {
 			  String key = entry.getKey();
 			  Integer value = entry.getValue();
@@ -97,6 +96,19 @@ public class TaxisokRepository {
 			}
 	}
 			
-	
+	public double megtettKilometer() {
+		double km = 0.0;
+		
+		for (Taxi taxi : Taxisok) {
+			km += taxi.getTavolsag();
+		}
+		
+		return km * 1.6;
+	}
 
+	public void leghosszabb() {
+		
+		Taxi t = Collections.max(Taxisok, Comparator.comparing(x -> x.getUtazasIdotartam()));
+		System.out.println("7. feladat: " + t.getUtazasIdotartam());
+	}
 }
