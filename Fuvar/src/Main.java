@@ -7,6 +7,7 @@ public class Main {
 		tr.fileBeolvas();
 		
 		System.out.println("3. feladat: "+ tr.getUtazasokSzama());
+		tr.bevetelPluszFuvar();
 
 	}
 
