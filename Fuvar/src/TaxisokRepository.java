@@ -58,4 +58,18 @@ public class TaxisokRepository {
 		return Taxisok.size();
 	}
 	
+	public void bevetelPluszFuvar() {
+		Double bevetel = 0.0;
+		int fuvar = 0;
+		for (Taxi taxi : Taxisok) {
+			
+			if (taxi.getAzonosito() == 6185) {
+				bevetel += taxi.getViteldij();
+				fuvar++;
+			}
+			
+		}
+		
+		System.out.println("4. feladat: "+ fuvar + " fuvar alatt: " + bevetel);
+	}
 }
