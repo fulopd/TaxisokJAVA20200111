@@ -31,11 +31,11 @@ public class Taxi {
 		this.azonosito = azonosito;
 	}
 
-	public Date getIndulasiIdo() {
+	public LocalDateTime getIndulasiIdo() {
 		return indulasiIdo;
 	}
 
-	public void setIndulasiIdo(Date indulasiIdo) {
+	public void setIndulasiIdo(LocalDateTime indulasiIdo) {
 		this.indulasiIdo = indulasiIdo;
 	}
 
