@@ -8,6 +8,7 @@ public class Main {
 		
 		System.out.println("3. feladat: "+ tr.getUtazasokSzama());
 		tr.bevetelPluszFuvar();
+		tr.fizetesiModok();
 
 	}
 

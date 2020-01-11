@@ -6,7 +6,12 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 
 public class TaxisokRepository {
@@ -72,4 +77,26 @@ public class TaxisokRepository {
 		
 		System.out.println("4. feladat: "+ fuvar + " fuvar alatt: " + bevetel);
 	}
+
+	public void fizetesiModok() {
+		
+		HashSet<String> modok = new HashSet<String>();	
+		TreeMap<String, Integer> tree_map = new TreeMap<String, Integer>(); 
+		
+		for (Taxi taxi : Taxisok) {			
+			modok.add(taxi.getFizetesiMod());
+			tree_map.merge(taxi.getFizetesiMod(), 1, Integer::sum);
+		}
+		
+		
+		for(Map.Entry<String,Integer> entry : tree_map.entrySet()) {
+			  String key = entry.getKey();
+			  Integer value = entry.getValue();
+
+			  System.out.println(key + " => " + value);
+			}
+	}
+			
+	
+
 }
