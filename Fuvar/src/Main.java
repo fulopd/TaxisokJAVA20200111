@@ -2,7 +2,11 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		TaxisokRepository tr = new TaxisokRepository();
+		tr.fileBeolvas();
+		
+		System.out.println("3. feladat: "+ tr.getUtazasokSzama());
 
 	}
 
